@@ -11,14 +11,14 @@ device_ids = [0]
 
 # Train:
 batch_size = 8
-cropsize = 224
+cropsize = 64
 betas = (0.5, 0.999)
 weight_step = 200
 gamma = 0.5
 num_train = 1000
 
 # Val:
-cropsize_val = 224
+cropsize_val = 64
 batchsize_val = 2
 shuffle_val = False
 val_freq = 10
@@ -29,8 +29,8 @@ num_val = 200
 dataset = "imagenet"
 TRAIN_PATH = 'data/ImageNet/train'
 VAL_PATH = 'data/ImageNet/test'
-format_train = 'png'
-format_val = 'png'
+format_train = 'JPEG'
+format_val = 'JPEG'
 
 # Display and logging:
 loss_display_cutoff = 2.0
@@ -42,13 +42,13 @@ progress_bar = True
 
 # Saving checkpoints:
 
-MODEL_PATH = 'model/'
+MODEL_PATH = 'drive/MyDrive/PRIS/models'
 checkpoint_on_error = True
 SAVE_freq = 50
 
-IMAGE_PATH = 'image/'
-IMAGE_PATH_host= IMAGE_PATH + 'host/'
-IMAGE_PATH_secret = IMAGE_PATH + 'secret/'
-IMAGE_PATH_container = IMAGE_PATH + 'container/'
-IMAGE_PATH_extracted = IMAGE_PATH + 'extracted/'
+IMAGE_PATH = 'drive/MyDrive/PRIS/image/'
+IMAGE_PATH_host= IMAGE_PATH + 'drive/MyDrive/PRIS/host/'
+IMAGE_PATH_secret = IMAGE_PATH + 'drive/MyDrive/PRIS/secret/'
+IMAGE_PATH_container = IMAGE_PATH + 'drive/MyDrive/PRIS/container/'
+IMAGE_PATH_extracted = IMAGE_PATH + 'drive/MyDrive/PRIS/extracted/'
 

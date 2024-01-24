@@ -15,7 +15,7 @@ TRANSFORMS = {
             T.RandomVerticalFlip(),
             T.Resize((c.cropsize, c.cropsize), antialias=None),
             T.ToTensor()]),
-        "tranform_val": T.Compose([
+        "transform_val": T.Compose([
             T.Resize((c.cropsize, c.cropsize), antialias=None),
             T.ToTensor()])
     },
@@ -46,7 +46,6 @@ class ImageNetDataset(Dataset):
         #
         # Init dataset, triggers, and responses
         #
-        print(c.TRAIN_PATH)
         if mode == 'train':
             # train
             self.dataset = natsorted(sorted(glob.glob(c.TRAIN_PATH + "/*." + c.format_train)))
@@ -127,7 +126,7 @@ if c.dataset == "imagenet":
     )
 
     testloader = DataLoader(
-        Hinet_Dataset(transforms_=TRANSFORMS["imagenet"]["transform_val"], mode="val"),
+        ImageNetDataset(transforms_=TRANSFORMS["imagenet"]["transform_val"], mode="val"),
         batch_size=c.batchsize_val,
         shuffle=False,
         pin_memory=True,
