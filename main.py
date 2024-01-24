@@ -235,7 +235,7 @@ def main(attack_method, step, load_path='', start_epoch=0, end_epoch = 1600, lam
 
 
 if __name__ == '__main__':
-    attack_method = 'gaussian10'
+    attack_method = 'JPEG Q=80'
     lambda_c = 1.0
     lambda_s = 1.0
     lam = (lambda_c, lambda_s)
