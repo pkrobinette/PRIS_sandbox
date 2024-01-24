@@ -25,6 +25,13 @@ val_freq = 10
 num_val = 200
 
 
+# model
+load_path = "drive/MyDrive/PRIS/models/model_checkpoint_00750.pt"
+start_epoch = 750
+end_epoch = 1600
+step = 0 # 0: pretrain, 1: enhance, 2: finetune
+
+
 # Dataset
 dataset = "imagenet"
 TRAIN_PATH = 'data/ImageNet/train'
