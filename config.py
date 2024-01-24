@@ -15,17 +15,20 @@ cropsize = 224
 betas = (0.5, 0.999)
 weight_step = 200
 gamma = 0.5
+num_train = 1000
 
 # Val:
 cropsize_val = 224
 batchsize_val = 2
 shuffle_val = False
 val_freq = 10
+num_val = 200
 
 
 # Dataset
-TRAIN_PATH = '/home/Dataset/DIV2K/DIV2K_train_HR'
-VAL_PATH = '/home/Dataset/DIV2K/DIV2K_valid_HR'
+dataset = "imagenet"
+TRAIN_PATH = 'data/ImageNet/train'
+VAL_PATH = 'data/ImageNet/test'
 format_train = 'png'
 format_val = 'png'
 
