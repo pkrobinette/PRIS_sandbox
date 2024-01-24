@@ -12,6 +12,7 @@ import viz
 import warnings
 from util import attack, gauss_noise, mse_loss, computePSNR, dwt, iwt
 import torchvision
+import os
 
 # 网络参数数量
 
@@ -158,12 +159,12 @@ def train(net, step, optim, weight_scheduler, attack_method, start_epoch, end_ep
 
         if i_epoch > 0 and (i_epoch % c.SAVE_freq) == 0:
             torch.save({'opt': optim.state_dict(),
-                        'net': net.state_dict()}, c.MODEL_PATH + 'model_checkpoint_%.5i' % i_epoch + '.pt')
+                        'net': net.state_dict()}, os.path.join(c.MODEL_PATH, 'model_checkpoint_%.5i' % i_epoch + '.pt'))
 
         weight_scheduler.step()
 
     torch.save({'opt': optim.state_dict(),
-                'net': net.state_dict()}, f'final_state/{expinfo}.pt')
+                'net': net.state_dict()}, os.path.join(c.MODEL_PATH, 'final_state/{expinfo}.pt'))
     writer.close()
 
 
